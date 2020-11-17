@@ -15,21 +15,24 @@ const Title = styled.span`
 
 const Grid = styled.div`
   margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 125px);
+  grid-gap: 25px;
 `;
 
 const Section = ({ title, children }) => (
-    <Container>
-        <Title>{title}</Title>
-        <Grid>{children}</Grid>
-    </Container>
+  <Container>
+    <Title>{title}</Title>
+    <Grid>{children}</Grid>
+  </Container>
 );
 
 Section.propTypes = {
-    title: PropTypes.string.isRequired,
-    children: PropTypes.oneOfType([
-        PropTypes.arrayOf(PropTypes.node),
-        PropTypes.node
-    ])
+  title: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ])
 };
 
 export default Section;
